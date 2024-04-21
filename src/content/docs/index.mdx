@@ -3,34 +3,97 @@ title: Nostr, Media sosial yang Terdesentralisasi
 description: Mulai menggunakan Nostr untuk mengibarkan bendera FREEDOM OF SPEECH!
 template: splash
 hero:
-  tagline: Congrats on setting up a new Starlight project!
+  tagline: Pelajari tentang Nostr, Protokol sederhana dan terbuka yang memungkinkan jaringan sosial global yang benar-benar tahan sensor.
   image:
     file: ../../assets/houston.webp
   actions:
-    - text: Example Guide
+    - text: Memulai
       link: /guides/example/
       icon: right-arrow
       variant: primary
-    - text: Read the Starlight docs
-      link: https://starlight.astro.build
+    - text: Lihat Nostr di Github
+      link: https://github.com/nostr-protocol/nostr
       icon: external
 ---
 
-import { Card, CardGrid } from '@astrojs/starlight/components';
+import { Icon, CardGrid, LinkCard } from '@astrojs/starlight/components';
 
-## Next steps
+## Apa itu Nostr?
+
+Nostr adalah protokol sederhana dan terbuka yang memungkinkan media sosial global, terdesentralisasi, dan tahan sensor.
+
 
 <CardGrid stagger>
-	<Card title="Update content" icon="pencil">
-		Edit `src/content/docs/index.mdx` to see this page change.
-	</Card>
-	<Card title="Add new content" icon="add-document">
-		Add Markdown or MDX files to `src/content/docs` to create new pages.
-	</Card>
-	<Card title="Configure your site" icon="setting">
-		Edit your `sidebar` and other config in `astro.config.mjs`.
-	</Card>
-	<Card title="Read the docs" icon="open-book">
-		Learn more in [the Starlight Docs](https://starlight.astro.build/).
-	</Card>
+	<LinkCard
+	title="Memulai"
+	description="Buat akun dan bergabung dengan ribuan orang lainnya di Nostr."
+	href="/guides/get-started"
+	/>
+
+	<LinkCard title="Nostr Protokol"
+	description="Pelajari tentang bagaimana Nostr Protokol bekerja dan apa yang membuatnya spesial."
+	href="/guides/nostr-protocol"
+	icon="add-document"
+	/>
+
+	<LinkCard
+	title="Cari klien"
+	description="Cari klien (app) untuk web, iOS, Android, atau Desktop."
+	href="/guides/nostr-clients"
+	icon="setting"
+	/>
+	
+	<LinkCard
+	title="Berkontribusi"
+	description="Cari tahu bagaimana kamu bisa berkontribusi kepada Nostr Protokol."
+	href="/guides/contribute"
+	icon="open-book"
+	/>
 </CardGrid>
+
+## Apa itu Nostr?
+
+Nostr adalah sebuah protokol, yang dirancang untuk kesederhanaan, yang bertujuan untuk menciptakan jaringan sosial global yang tahan sensor. Mari kita bongkar sedikit:
+
+### Sederhana
+
+Protokol ini didasarkan pada objek **event** yang sangat sederhana & fleksibel (yang diedarkan sebagai JSON biasa) dan menggunakan kriptografi kurva elips standar untuk kunci dan penandatanganan. Satu-satunya transportasi yang didukung adalah koneksi soket web dari klien ke relay. Hal ini memudahkan penulisan klien dan relay serta mendorong keragaman perangkat lunak.
+
+### Tangguh
+
+Karena Nostr tidak bergantung pada sejumlah kecil server terpercaya untuk memindahkan atau menyimpan data, maka Nostr sangat tangguh. Protokol mengasumsikan bahwa relai akan hilang dan memungkinkan pengguna untuk terhubung dan mempublikasikan ke sejumlah relai yang dapat mereka ubah seiring waktu.
+
+### Dapat diverifikasi
+
+Karena akun Nostr didasarkan pada kriptografi kunci publik, maka mudah untuk memverifikasi bahwa pesan benar-benar dikirim oleh pengguna yang bersangkutan.
+
+Seperti HTTP atau TCP-IP, Nostr adalah sebuah protokol; sebuah standar terbuka yang dapat dibangun oleh siapa pun. Nostr bukanlah aplikasi atau layanan yang Anda daftarkan.
+
+## Mengapa kita membutuhkan Nostr
+
+Media sosial telah berkembang menjadi cara utama mengalirnya informasi ke seluruh dunia. Sayangnya, sistem media sosial kita saat ini rusak:
+
+<>
+  <ol>
+    <li>Menggunakan atensi Anda untuk menjual iklan</li>
+	<li>Menggunakan teknik aneh untuk membuat Anda ketagihan (lihat poin 1)</li>
+	<li>Memutuskan konten apa yang akan ditampilkan kepada Anda berdasarkan algoritme rahasia yang tidak dapat Anda periksa atau ubah</li>
+	<li>Memiliki kendali penuh atas siapa yang boleh berpartisipasi dan siapa yang disensor</li>
+	<li>Dibanjiri dengan spam dan bot</li>
+  </ol>
+</>
+
+Lihat juga [perbandingannya dengan protokol media sosial alternatif lainnya]('/comparisons).
+
+## Konten rekomendasi eksternal untuk mempelajari Nostr
+
+<>
+  <ul>
+    <li><a href="https://wiki.wellorder.net/post/nostr-intro/" title="Nostr, an Introduction" target="_blank" rel="nofollow noopener"><i>Nostr, an Introduction</i></a>, oleh scsibug</li>
+	<li><a href="https://hivemind.vc/nostr/" title="Why I’m Betting Big on Nostr" target="_blank" rel="nofollow noopener"><i>Why I’m Betting Big on Nostr</i></a>, oleh Max Webster</li>
+	<li><a href="https://blog.lopp.net/why-nostr-matters/" title="Why Nostr Matters" target="_blank" rel="nofollow noopener"><i>Why Nostr Matters</i></a>, oleh Jameson Lopp</li>
+	<li><a href="https://fiatjaf.com/3f106d31.html" title="A vision for content discovery and relay usage" target="_blank" rel="nofollow noopener"><i>A vision for content discovery and relay usage</i></a>, oleh fiatjaf</li>
+	<li><a href="https://blog.coracle.social/posts/2f375ecdcefa65f5d7d9ae5b74f3d276a6e2b2c9a4aafad50c48cc6be66407b2" title="Thoughts on relay browsing" target="_blank" rel="nofollow noopener"><i>Thoughts on relay browsing</i></a>, oleh Jon Staab</li>
+	<li><a href="https://tgfb.com/podcasts/thank-god-for-nostr/" title="Thank God for Nostr podcast" target="_blank" rel="nofollow noopener"><i>Thank God for Nostr podcast</i></a> menayangkan wawancara menarik terkait Nostr setiap minggunya.</li>
+  </ul>
+</>

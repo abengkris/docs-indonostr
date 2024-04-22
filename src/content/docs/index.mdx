@@ -8,7 +8,7 @@ hero:
     file: ../../assets/houston.webp
   actions:
     - text: Memulai
-      link: /guides/example/
+      link: /guides/get-started
       icon: right-arrow
       variant: primary
     - text: Lihat Nostr di Github
@@ -57,11 +57,11 @@ Nostr adalah sebuah protokol, yang dirancang untuk kesederhanaan, yang bertujuan
 
 ### Sederhana
 
-Protokol ini didasarkan pada objek **event** yang sangat sederhana & fleksibel (yang diedarkan sebagai JSON biasa) dan menggunakan kriptografi kurva elips standar untuk kunci dan penandatanganan. Satu-satunya transportasi yang didukung adalah koneksi soket web dari klien ke relay. Hal ini memudahkan penulisan klien dan relay serta mendorong keragaman perangkat lunak.
+Protokol ini didasarkan pada objek **`event`** yang sangat sederhana & fleksibel (yang dikirim sebagai JSON biasa) dan menggunakan kriptografi kurva elips standar untuk kunci dan penandatanganan. Satu-satunya transportasi yang didukung adalah koneksi soket web dari klien ke relay. Hal ini memudahkan penulisan klien dan relay serta mendorong keragaman perangkat lunak.
 
 ### Tangguh
 
-Karena Nostr tidak bergantung pada sejumlah kecil server terpercaya untuk memindahkan atau menyimpan data, maka Nostr sangat tangguh. Protokol mengasumsikan bahwa relai akan hilang dan memungkinkan pengguna untuk terhubung dan mempublikasikan ke sejumlah relai yang dapat mereka ubah seiring waktu.
+Karena Nostr tidak bergantung pada sejumlah kecil server terpercaya untuk memindahkan atau menyimpan data, maka Nostr sangat tangguh. Protokol mengasumsikan bahwa relay akan hilang dan memungkinkan pengguna untuk terhubung dan mempublikasikan ke sejumlah relay yang dapat mereka ubah seiring waktu.
 
 ### Dapat diverifikasi
 
@@ -71,7 +71,7 @@ Seperti HTTP atau TCP-IP, Nostr adalah sebuah protokol; sebuah standar terbuka y
 
 ## Mengapa kita membutuhkan Nostr
 
-Media sosial telah berkembang menjadi cara utama mengalirnya informasi ke seluruh dunia. Sayangnya, sistem media sosial kita saat ini rusak:
+Media sosial telah berkembang menjadi cara utama mengalirnya informasi ke seluruh dunia. Sayangnya, sistem media sosial kita yang ada saat ini telah rusak:
 
 <>
   <ol>
@@ -85,15 +85,28 @@ Media sosial telah berkembang menjadi cara utama mengalirnya informasi ke seluru
 
 Lihat juga [perbandingannya dengan protokol media sosial alternatif lainnya]('/comparisons).
 
-## Konten rekomendasi eksternal untuk mempelajari Nostr
+## Rekomendasi konten eksternal untuk mempelajari Nostr
 
 <>
   <ul>
-    <li><a href="https://wiki.wellorder.net/post/nostr-intro/" title="Nostr, an Introduction" target="_blank" rel="nofollow noopener"><i>Nostr, an Introduction</i></a>, oleh scsibug</li>
-	<li><a href="https://hivemind.vc/nostr/" title="Why I’m Betting Big on Nostr" target="_blank" rel="nofollow noopener"><i>Why I’m Betting Big on Nostr</i></a>, oleh Max Webster</li>
-	<li><a href="https://blog.lopp.net/why-nostr-matters/" title="Why Nostr Matters" target="_blank" rel="nofollow noopener"><i>Why Nostr Matters</i></a>, oleh Jameson Lopp</li>
-	<li><a href="https://fiatjaf.com/3f106d31.html" title="A vision for content discovery and relay usage" target="_blank" rel="nofollow noopener"><i>A vision for content discovery and relay usage</i></a>, oleh fiatjaf</li>
-	<li><a href="https://blog.coracle.social/posts/2f375ecdcefa65f5d7d9ae5b74f3d276a6e2b2c9a4aafad50c48cc6be66407b2" title="Thoughts on relay browsing" target="_blank" rel="nofollow noopener"><i>Thoughts on relay browsing</i></a>, oleh Jon Staab</li>
-	<li><a href="https://tgfb.com/podcasts/thank-god-for-nostr/" title="Thank God for Nostr podcast" target="_blank" rel="nofollow noopener"><i>Thank God for Nostr podcast</i></a> menayangkan wawancara menarik terkait Nostr setiap minggunya.</li>
+    <li><a href="https://wiki.wellorder.net/post/nostr-intro/" title="Nostr, an Introduction" target="_blank" rel="nofollow noopener"><strong><i>Nostr, an Introduction</i></strong></a>, oleh scsibug</li>
+	<li><a href="https://hivemind.vc/nostr/" title="Why I’m Betting Big on Nostr" target="_blank" rel="nofollow noopener"><strong><i>Why I’m Betting Big on Nostr</i></strong></a>, oleh Max Webster</li>
+	<li><a href="https://blog.lopp.net/why-nostr-matters/" title="Why Nostr Matters" target="_blank" rel="nofollow noopener"><strong><i>Why Nostr Matters</i></strong></a>, oleh Jameson Lopp</li>
+	<li><a href="https://fiatjaf.com/3f106d31.html" title="A vision for content discovery and relay usage" target="_blank" rel="nofollow noopener"><strong><i>A vision for content discovery and relay usage</i></strong></a>, oleh fiatjaf</li>
+	<li><a href="https://blog.coracle.social/posts/2f375ecdcefa65f5d7d9ae5b74f3d276a6e2b2c9a4aafad50c48cc6be66407b2" title="Thoughts on relay browsing" target="_blank" rel="nofollow noopener"><strong><i>Thoughts on relay browsing</i></strong></a>, oleh Jon Staab</li>
+	<li><a href="https://tgfb.com/podcasts/thank-god-for-nostr/" title="Thank God for Nostr podcast" target="_blank" rel="nofollow noopener"><strong><i>Thank God for Nostr podcast</i></strong></a> menayangkan wawancara menarik terkait Nostr setiap minggunya.</li>
+  </ul>
+</>
+
+## Alat mikro untuk membantu Anda menavigasi dan menggunakan Nostr
+
+<>
+  <ul>
+    <li><a href="https://nostr.band/" title="Nostr Band" target="_blank" rel="nofollow noopener"><strong>nostr.band</strong></a> mengindeks keseluruhan Nostr yang dapat ditemukan dan membuatnya dapat dicari.</li>
+	<li><a href="https://nostr.watch/" title="Nostr Watch" target="_blank" rel="nofollow noopener"><strong>nostr.watch</strong></a> memiliki indeks dan statistik koneksi semua relay publik di internet.</li>
+	<li><a href="https://njump.me/" title="Njump" target="_blank" rel="nofollow noopener"><strong>njump</strong></a> menghasilkan pratinjau tautan bagus yang dapat disematkan untuk profil dan **`event`** serta merendernya.</li>
+	<li><a href="https://metadata.nostr.com/" title="Nostr Profile Manager" target="_blank" rel="nofollow noopener"><strong>Nostr Profile Manager</strong></a> memungkinkan Anda mengedit, mencadangkan, dan memulihkan metadata profil, kontak, dan daftar relay.</li>
+	<li><a href="https://nak.nostr.com/" title="nostr army knife" target="_blank" rel="nofollow noopener"><strong>nostr army knife</strong></a> dan <a href="https://nostrstuff.com/" title="nostrStuff" target="_blank" rel="nofollow noopener"><strong>nostrStuff</strong></a> memungkinkan Anda memeriksa pengidentifikasi, peristiwa, dan relay Nostr serta mengonversi antar format.</li>
+	<li><a href="https://zaplife.lol/" title="zaplife.lol" target="_blank" rel="nofollow noopener"><strong>zaplife.lol</strong></a> menampilkan aliran zaps dan `note` yang mendapatkan zap.</li>
   </ul>
 </>

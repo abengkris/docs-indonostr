@@ -5,16 +5,16 @@ import starlight from '@astrojs/starlight';
 export default defineConfig({
 	integrations: [
 		starlight({
-			title: 'IndoNostr',
+			title: 'IndoNostr.xyz',
 			social: {
 				github: 'https://github.com/withastro/starlight',
 			},
 			sidebar: [
 				{
-					label: 'Guides',
+					label: 'Panduan',
 					items: [
 						// Each item here is one entry in the navigation menu.
-						{ label: 'Example Guide', link: '/guides/example/' },
+						{ label: 'Memulai', link: '/guides/get-started' },
 					],
 				},
 				{

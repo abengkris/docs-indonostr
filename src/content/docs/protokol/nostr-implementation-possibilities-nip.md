@@ -1,6 +1,7 @@
 ---
 title: Nostr Implementation Possibilities (NIP)
 description: Apa itu NIP dan mengapa Anda harus peduli dengan mereka?
+lastUpdated: 2024-04-23
 ---
 
 Apa itu NIP dan mengapa Anda harus peduli dengan mereka?

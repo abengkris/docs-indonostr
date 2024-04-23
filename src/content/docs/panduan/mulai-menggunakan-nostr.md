@@ -1,6 +1,7 @@
 ---
 title: Mulai Menggunakan Nostr
 description: Sebuah panduan langkah-langkah untuk memulai dengan Nostr.
+lastUpdated: 2024-04-23
 ---
 
 Sebuah panduan langkah-langkah untuk memulai dengan Nostr.
@@ -17,7 +18,7 @@ Nostr sendiri hanyalah sebuah protokol; prosedur yang disepakati untuk menyampai
 
 Anda akan mengakses Nostr (protokol) melalui klien. Klien dapat berupa web, desktop, atau aplikasi seluler. Klien dapat mengambil data dari relay dan juga menghasilkan data baru dan mengirimkannya ke relay sehingga orang lain dapat membacanya.
 
-Satu-satunya bentuk "data" yang ada di Nostr adalah **[event](/nostr-protocol/event)**.
+Satu-satunya bentuk "data" yang ada di Nostr adalah **[event](/protokol/events)**.
 
 
 ### Menandatangani Peristiwa
@@ -30,7 +31,7 @@ Untuk dapat membuat tanda tangan, klien memerlukan kunci pribadi Anda. Aplikasi 
 
 ## Mari kita coba!
 
-Berikut **[beberapa klien nostr](/clients)** rekomendasi kami.
+Berikut **[beberapa klien nostr](/klien)** rekomendasi kami.
 
 ## Temukan teman untuk diikuti
 
@@ -43,4 +44,4 @@ Berikut **[beberapa klien nostr](/clients)** rekomendasi kami.
 
 Ya! Sekarang setelah Anda membuat pasangan kunci publik/pribadi, Anda dapat menggunakan pasangan ini di klien Nostr mana pun untuk mengakses akun Anda. Ingat, klien hanyalah sebuah antarmuka untuk melihat pesan yang disiarkan pada protokol Nostr.
 
-Karena pengembangan Nostr masih sangat awal, tidak semua klien mendukung semua fitur protokol dengan cara yang sama. Ada baiknya Anda memeriksa <a href="/clients" title="Halaman klien"><strong>halaman klien</strong></a> kami untuk menemukan klien terbaik untuk Anda, atau terjun ke dalam kekacauan semua klien lain yang tersedia di <a href="https://nostr.net/" title="nostr.net" target="_blank" rel="nofollow noopener"><strong>nostr.net</strong></a>.
+Karena pengembangan Nostr masih sangat awal, tidak semua klien mendukung semua fitur protokol dengan cara yang sama. Ada baiknya Anda memeriksa <a href="/klien" title="Halaman klien"><strong>halaman klien</strong></a> kami untuk menemukan klien terbaik untuk Anda, atau terjun ke dalam kekacauan semua klien lain yang tersedia di <a href="https://nostr.net/" title="nostr.net" target="_blank" rel="nofollow noopener"><strong>nostr.net</strong></a>.

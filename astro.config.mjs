@@ -14,8 +14,12 @@ export default defineConfig({
 					label: 'Panduan',
 					items: [
 						// Each item here is one entry in the navigation menu.
-						{ label: 'Memulai', link: '/guides/get-started' },
+						{ label: 'Mulai menggunakan Nostr', link: '/panduan/mulai-menggunakan-nostr' },
 					],
+				},
+				{
+					label: 'Protokol',
+					autogenerate: { directory: 'protokol' },
 				},
 				{
 					label: 'Reference',

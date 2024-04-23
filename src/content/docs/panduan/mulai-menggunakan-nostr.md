@@ -3,6 +3,8 @@ title: Mulai Menggunakan Nostr
 description: Sebuah panduan langkah-langkah untuk memulai dengan Nostr.
 ---
 
+Sebuah panduan langkah-langkah untuk memulai dengan Nostr.
+
 ## Memahami kunci
 
 Setiap akun Nostr didasarkan pada pasangan kunci publik/pribadi. Cara sederhana untuk memikirkan hal ini adalah kunci publik Anda adalah nama pengguna Anda dan kunci pribadi Anda adalah kata sandi Anda, dengan satu peringatan utama. Berbeda dengan kata sandi, kunci pribadi Anda tidak dapat dipulihkan jika hilang.

@@ -1,0 +1,50 @@
+---
+title: Events
+description: Peristiwa (event) adalah unit atom dari protokol Nostr. Ini adalah gambaran singkat tentang berbagai jenis event.
+---
+
+Peristiwa ( _`event`_ ) adalah unit atom dari protokol Nostr. Ini adalah gambaran singkat tentang berbagai jenis _event_.
+
+## Apa itu _event_ ?
+
+_Event_ adalah satu-satunya tipe objek di jaringan Nostr. Ini salah satu contohnya:
+
+import { Code } from '@astrojs/starlight/components';
+
+export const nostrEvent = `{
+  "pubkey": "07907690ce3fec30fb2089eb5a61c147548c244ba85605e713d7991cd4e015f6",
+  "content": "Fungsinya pemuda pancasila apa sih? #indonesia #indonostr https://nostpic.com/media/07907690ce3fec30fb2089eb5a61c147548c244ba85605e713d7991cd4e015f6/502bd975bb08472037725d0fa047bbfe19e4baff1bbae2fe3a0701e76dd8f30d.webp",
+  "id": "37d14e5e16e08bb2b2cfd8beb03456e21991fc723a519624e5a12f0daa207c2f",
+  "created_at": 1713765089,
+  "kind": "1",
+  "tags": [
+    ["t", "indonesia"],
+    ["t", "indonostr"],
+    ["r", "https://nostpic.com/media/07907690ce3fec30fb2089eb5a61c147548c244ba85605e713d7991cd4e015f6/502bd975bb08472037725d0fa047bbfe19e4baff1bbae2fe3a0701e76dd8f30d.webp"],
+    [
+        "imeta", "url https://nostpic.com/media/07907690ce3fec30fb2089eb5a61c147548c244ba85605e713d7991cd4e015f6/502bd975bb08472037725d0fa047bbfe19e4baff1bbae2fe3a0701e76dd8f30d.webp",
+        "m image/webp",
+        "alt Fungsinya pemuda pancasila apa sih? #indonesia #indonostr",
+        "x c5c884a384b3529dc7618b0a4a411396995e58c8dd6d3eafe73c920bf44f9ca3",
+        "size 167600",
+        "dim 1080x2460",
+        "blurhash [7BDWt-qb]kDD$xvaeoz00R*eVROv$ITg3oz8_I9R%x^*JxvxHRPIU.8x]RP~DVtNGX9E1RPr;Wr",
+        "ox 502bd975bb08472037725d0fa047bbfe19e4baff1bbae2fe3a0701e76dd8f30d"
+    ]
+  ]
+}`;
+export const fileName = 'Nostr event';
+
+<Code code={nostrEvent} lang="json" title={fileName} />
+
+_Event_ di atas mempunyai _**kind 1**_, artinya adalah "text note", yaitu catatan biasa, sederhana, pendek, teks biasa, yang dimaksudkan untuk digunakan dalam feed, balasan, dan komentar seperti Twitter.
+
+Setiap nomor **_kind_** berarti sesuatu. Misalnya, **0** adalah peristiwa "metadata", yang digunakan pengguna untuk memberikan detail tentang dirinya, seperti nama dan gambar profil. Relay dapat memberikan perlakuan yang berbeda terhadap _kind_ yang berbeda. Misalnya, relay umumnya akan menghapus peristiwa _**kind:0**_ versi lama dan hanya menyimpan peristiwa terakhir, sementara relay umumnya menyimpan beberapa _**1**_ untuk setiap kunci.
+
+Biasanya Anda tidak memerlukan lebih dari _kind_ _**0**_ dan _**1**_ untuk membangun aplikasi dasar jejaring sosial Nostr, namun _kind_ lain diciptakan karena kebutuhan oleh klien untuk menyediakan fungsi lain. Hal ini ditentukan dalam [**NIP**](/protokol/klien). Beberapa _kind_ tidak terkait dengan jejaring sosial dan melayani kebutuhan lain dari klien yang spesifik untuk fungsi lain tersebut. Idenya adalah bahwa, untuk setiap kasus penggunaan baru yang dapat dipikirkan orang di NOSTR, subprotokol harus dipikirkan dan diusulkan sebagai NIP, untuk interoperabilitas maksimum dengan klien yang ada dan di masa depan yang mungkin tertarik untuk menerapkan fungsi itu - sambil memastikan juga kompatibilitas ke belakang dan fallback yang bagus untuk segala sesuatu yang ada dan tidak ingin berubah.
+
+Properti _**created_at**_ adalah stempel waktu UNIX yang ditetapkan oleh pembuat _event_, biasanya pada waktu pembuatannya, namun tidak ada pemeriksaan yang dilakukan terhadap hal tersebut, namun hal tersebut tidak menjadi masalah.
+
+_**content**_ bergantung pada apa yang dimaksud dengan _**kind**_-nya. Dalam kasus _**kind:1**_, ini hanyalah string teks biasa yang dimaksudkan untuk dibaca oleh orang lain.
+
+Demikian pula, _**tags**_ juga bergantung pada _kind_-nya, tetapi beberapa _tags_ umum yang biasanya muncul dalam _**kind:1**_ _event_ tetapi juga dalam _kind_ lainnya adalah **"_p_"**, yang digunakan untuk menyebutkan kunci publik, dan "e", yang digunakan untuk merujuk pada acara lain.

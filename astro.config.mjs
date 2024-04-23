@@ -5,7 +5,14 @@ import starlight from '@astrojs/starlight';
 export default defineConfig({
 	integrations: [
 		starlight({
+			// site: 'https://cuddly-space-pancake-wqwg6996ww52v9gx-4321.app.github.dev',
 			title: 'IndoNostr.xyz',
+			locales: {
+				root: {
+				  label: 'Indonesian',
+				  lang: 'id',
+				},
+			  },
 			social: {
 				github: 'https://github.com/withastro/starlight',
 			},
@@ -13,13 +20,17 @@ export default defineConfig({
 				{
 					label: 'Panduan',
 					items: [
-						// Each item here is one entry in the navigation menu.
+						{ label: 'Apa itu Nostr?', link: '/apa-itu-nostr' },
 						{ label: 'Mulai menggunakan Nostr', link: '/panduan/mulai-menggunakan-nostr' },
 					],
 				},
 				{
 					label: 'Protokol',
-					autogenerate: { directory: 'protokol' },
+					items: [
+						{ label: 'Nostr tingkat atas', link: '/protokol/nostr-tingkat-atas' },
+						{ label: 'Event', link: '/protokol/events' },
+						{ label: 'NIP', link: '/protokol/nostr-implementation-possibilities-nip' },
+					],
 				},
 				{
 					label: 'Reference',

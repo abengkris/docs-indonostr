@@ -3,6 +3,7 @@ import starlight from '@astrojs/starlight';
 
 // https://astro.build/config
 export default defineConfig({
+	output: "server",
 	integrations: [
 		starlight({
 			// site: 'https://cuddly-space-pancake-wqwg6996ww52v9gx-4321.app.github.dev',

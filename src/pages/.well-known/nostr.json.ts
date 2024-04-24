@@ -1,53 +1,37 @@
+import type { APIRoute } from "astro";
 import { MongoClient } from "mongodb";
 
-async function connectToDatabase() {
-  // @ts-ignore
-  const dbUrl = import.meta.env.MONGODB_URI;
-  const client = new MongoClient(dbUrl);
+import config from "../../../site.config";
 
-  try {
-    await client.connect();
-    console.log("Connected to the database");
+// Connection URL
+const dbUrl = import.meta.env.MONGODB_URI;
+const client = new MongoClient(dbUrl);
+const { dbName, dbCollection } = config;
 
-    const dbName = "users";
-    const dbCollection = "registered";
+export const GET: APIRoute = async function get({ request }) {
+  await client.connect();
+  const db = client.db(dbName);
+  const collection = db.collection(dbCollection);
 
-    const database = client.db(dbName);
-    const collection = database.collection(dbCollection);
+  const params = new URL(request.url).searchParams;
+  const searchUser = params.get("name");
 
-    const findResult = await collection.find({}).toArray();;
-    const userMap: Record<string, string> = {};
+  const queryParams = searchUser ? { username: searchUser } : {};
 
-    findResult.forEach((entry) => {
-      userMap[entry.username] = entry.pubkey;
-    });
+  const findResult = await collection.find(queryParams).toArray();
+  const userMap: Record<string, string> = {};
 
-    const json = {
-      names: Object.fromEntries(Object.entries(userMap).sort()),
-    };
+  findResult.forEach((entry) => {
+    userMap[entry.username] = entry.pubkey;
+  });
 
-    if (json) {
-      return json;
-    } else {
-      return {}; // Return blank JSON if no result found
-    }
-  } catch (err) {
-    console.error("Failed to connect to the database:", err);
-    return { error: "Failed to connect to the database" };
-  } finally {
-    await client.close();
-    console.log("Disconnected from the database");
-  }
-}
-
-// Example usage
-async function handleRequest() {
-  const json = await connectToDatabase();
-  console.log("Result:", json);
-  return {
-    body: JSON.stringify(json),
+  const json = {
+    names: Object.fromEntries(Object.entries(userMap).sort()),
   };
-}
 
-// Usage
-handleRequest();
+  client.close();
+
+  return new Response(
+    JSON.stringify(json)
+  );
+};
